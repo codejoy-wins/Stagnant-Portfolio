@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jinja attempt</title>
+    <link rel="stylesheet" href="{% static 'dope/style2.css' %}">
+
+</head>
+<body>
+    {{ request.session.first }} was the first name entered in the form.
+
+    <h2>What's good, {{ request.session.first }}  {{ request.session.xp }}</h2>
+    <h1><a href="/">Go Back</a></h1>
+</body>
+</html>

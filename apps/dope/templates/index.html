@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'dope/style.css' %}">
+    <title>Portfolio</title>
+</head>
+<body>
+    <div id="eminem">
+        <h1>Welcome to my Portfolio</h1>
+        <h2>My name is Maxwell Lawrence Jann</h2>
+        <p>The purpose of this portfolio is to showcase my web design skills and link to the things I've been working on</p>
+        <ul>
+            <li><a href="https://codejoy-wins.itch.io/interactive-portfolio">Interactive Portfolio</a></li>
+            <li><a href="https://codejoy-wins.itch.io/starbros">Starbros</a></li>
+            <li><a href="https://codejoy-wins.itch.io/grand-theft-basketball">Grand Theft Basketball</a></li>
+            <li><a href="https://codejoy-wins.itch.io/zombiverse">Zombiverse</a></li>
+        </ul>
+        <p>The purpose of the following form is to demonstate my ability to process forms</p>
+        <form action="/process" method="POST">
+            {% csrf_token %}
+            <p>First Name: <input type="text" name = "first"></p>
+            <p>Middle Name: <input type="text" name = "second"></p>
+            <p>Last Name: <input type="text" name = "third"></p>
+            <p><select name="xp">
+                <option>Male</option>
+                <option>Female</option>
+                <option>Decline to answer</option>
+            </select></p>
+            <p>Username: <input type="text" name = "fourth"></p>
+
+            <p>Password: <input type="password" name = "fifth"></p>
+            <p>Number: <input type="number" name = "sixth"></p>
+            <p><input type="submit" value="Obey"></p>
+
+        </form>
+        <a href="/odell">links bro, lynx</a>  
+        <h2>Here is the end result of processing the form:</h2>
+
+        {{ request.session.first }}
+        {{ request.session.second }}
+        {{ request.session.third }}
+        {{ request.session.fourth }}
+        {{ request.session.fifth }}
+        {{ request.session.sixth }}
+        {{ request.session.xp }}
+
+
+        <h3>Here is a link to another page displaying the info stored in session:</h3>
+        <a href="/another">Results of Form</a>
+
+        <h4>Here is some realtime display of formdata utilizing a templating engine</h4>
+
+        <ul>
+        {% for x in request.session.listx %}
+            <li>{{ x }}</li>
+        {% endfor %}
+        </ul>
+
+    </div>
+    
+</body>
+</html>

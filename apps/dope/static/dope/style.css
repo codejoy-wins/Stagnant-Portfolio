@@ -1,0 +1,18 @@
+p{
+    color:rgb(182, 40, 40);
+}
+
+
+*{
+    color:orangered;
+    background-color:rgb(20, 9, 84);
+}
+
+h2 {
+    color:green;
+}
+
+#eminem {
+    margin: 0 auto;
+    text-align: center;
+}
